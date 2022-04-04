@@ -1,0 +1,12 @@
+total 148
+drwxrwxr-x  2 rilind rilind  4096 Feb 21 20:19 inc
+drwxrwxr-x  3 rilind rilind  4096 Feb 21 20:19 lib
+-rw-rw-r--  1 rilind rilind 35149 Feb 21 20:19 LICENSE
+-rw-rw-r--  1 rilind rilind  5005 Feb 21 20:19 Makefile
+-rwxrwxr-x  1 rilind rilind 73600 Mar 25 22:29 minishell
+drwxrwxr-x 14 rilind rilind  4096 Mar 25 22:29 obj
+-rw-r--r--  1 rilind rilind     0 Mar 27 14:47 out
+-rw-rw-r--  1 rilind rilind  4627 Feb 21 20:19 README.md
+drwxrwxr-x 14 rilind rilind  4096 Mar 25 22:29 src
+drwxrwxr-x  3 rilind rilind  4096 Mar 25 22:29 tests
+-rw-r--r--  1 rilind rilind     2 Mar 27 13:58 tmp_out
