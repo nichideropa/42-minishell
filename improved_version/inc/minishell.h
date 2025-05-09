@@ -64,7 +64,7 @@ typedef struct s_quotes
 	int	d;
 }	t_quotes;
 
-t_minishell	g_msh;
+extern t_minishell	g_msh;
 
 /* ************************************************************************** */
 /* FUNCTION PROTOTYPES														  */
