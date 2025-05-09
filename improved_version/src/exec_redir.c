@@ -125,6 +125,8 @@ void	execute_redirections(t_redirection **redirections, int **pipe_ends,
 				}
 				if (scmd != 2)
 					ft_atexit(*status);
+				g_msh.exit_code = 1;
+				break ;
 			}
 		}
 		redir = redir->next;
