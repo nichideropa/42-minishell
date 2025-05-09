@@ -32,7 +32,7 @@ int	exit_builtin(char **arguments)
 	if (is_non_numeric(arguments[0]))
 	{
 		put_stderr(SHELL, "exit", arguments[0], "numeric argument required");
-		ft_atexit((unsigned char)255);
+		ft_atexit((unsigned char)2);
 	}
 	else if (ft_arrlen(arguments) > 1)
 	{
