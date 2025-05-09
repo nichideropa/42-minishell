@@ -25,7 +25,7 @@ int	echo_builtin(char **arguments)
 		j = 0;
 		while (arguments[i][0] == '-' && arguments[i][++j] == 'n')
 			;
-		if (arguments[i][j] == '\0' && new_line > 0 && j > 0)
+		if (arguments[i][j] == '\0' && new_line > 0 && j > 1)
 			new_line = 2;
 		else
 		{
