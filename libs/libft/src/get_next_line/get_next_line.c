@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rjasari <rjasari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/16 11:11:37 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/03/30 12:07:05 by rjasari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for read(2)
+#include <unistd.h>
+// for free(3)
+#include <stdlib.h>
+// for OPEN_MAX
 #include <limits.h>
 
 #ifndef BUFFER_SIZE

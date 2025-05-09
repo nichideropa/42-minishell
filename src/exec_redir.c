@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   exec_redir.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 14:25:03 by tkruger           #+#    #+#             */
-/*   Updated: 2022/04/01 16:00:11 by tkruger          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/minishell.h"
 
 static int	read_stdin_into_pipe(char *here_doc)
@@ -117,8 +105,10 @@ static int	open_files(t_redirection *redir, int *status)
 void	execute_redirections(t_redirection **redirections, int **pipe_ends,
 			int *status)
 {
+	int				scmd;
 	t_redirection	*redir;
 
+	scmd = *status;
 	redir = *redirections;
 	while (redir != NULL)
 	{
@@ -128,13 +118,15 @@ void	execute_redirections(t_redirection **redirections, int **pipe_ends,
 		{
 			if (open_files(redir, status) == -1)
 			{
-				// if (pipe_ends != NULL)
-				// {
-				// 	free(*pipe_ends);
-				// 	*pipe_ends = NULL;
-				// }
-				(void)pipe_ends;
-				ft_atexit(*status);
+				if (pipe_ends != NULL && *pipe_ends != NULL)
+				{
+					free(*pipe_ends);
+					*pipe_ends = NULL;
+				}
+				if (scmd != 2)
+					ft_atexit(*status);
+				g_msh.exit_code = 1;
+				break ;
 			}
 		}
 		redir = redir->next;

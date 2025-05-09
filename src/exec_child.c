@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   exec_child.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 14:24:55 by tkruger           #+#    #+#             */
-/*   Updated: 2022/04/01 14:24:56 by tkruger          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/minishell.h"
 
 static void	set_attributes(void)
@@ -81,6 +69,10 @@ void	child_process(t_table **table, int **pipe_ends, int *pipe_flag)
 	if (*pipe_flag == 1)
 		prepare_pipe(pipe_ends);
 	execute_redirections(&(*table)->redirections, pipe_ends, &status);
-	// free(*pipe_ends);
+	if (pipe_ends != NULL)
+	{
+		free(*pipe_ends);
+		*pipe_ends = NULL;
+	}
 	execute_child(table, &status);
 }

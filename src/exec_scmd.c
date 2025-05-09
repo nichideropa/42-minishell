@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   exec_scmd.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 14:25:06 by tkruger           #+#    #+#             */
-/*   Updated: 2022/04/01 14:25:07 by tkruger          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/minishell.h"
 
 void	simple_command(t_table *table)
@@ -19,9 +7,11 @@ void	simple_command(t_table *table)
 	int		initial_stdout;
 	pid_t	process_id;
 
-	status = 0;
+	status = 2;
 	filestream_operations(&initial_stdin, &initial_stdout, 1);
 	execute_redirections(&table->redirections, NULL, &status);
+	if (status == 1)
+		return ;
 	if (check_builtins(table->arguments))
 	{
 		builtins(table->arguments);

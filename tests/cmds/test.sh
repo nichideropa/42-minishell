@@ -1,1 +1,2 @@
-/bin/grep 1 < inputfile
+export X="  A  B  "
+/bin/echo "1"$X'2'

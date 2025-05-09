@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rjasari <rjasari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:59:40 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/21 22:49:57 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/03/30 12:10:09 by rjasari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for va_list
+#include <stdarg.h>
+// for INT32_MAX
+#include <stdint.h>
 
 int	ft_min(int count, ...)
 {

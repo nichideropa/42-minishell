@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rjasari <rjasari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:56:01 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/09 02:24:10 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/03/30 13:25:46 by rjasari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 void	ft_free_array(char ***arr)
 {
@@ -19,13 +21,9 @@ void	ft_free_array(char ***arr)
 
 	parser = *arr;
 	i = 0;
-	while (parser[i] != NULL)
+	while (arr != NULL && parser != NULL && parser[i] != NULL)
 	{
-		free(parser[i]);
-		parser[i] = NULL;
-		i++;
+		ft_free((void **)&parser[i++]);
 	}
-	if (parser != NULL)
-		free(parser);
-	parser = NULL;
+	ft_free((void **)arr);
 }
